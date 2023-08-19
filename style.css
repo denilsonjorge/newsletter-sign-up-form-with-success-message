@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf') format('woff2'),
+  url('./assets/fonts/Roboto-Regular.ttf') format('woff');
+}
+*{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background: #36384e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* pagina principal*/
+.container{
+ max-width: 760px;
+  position: absolute;
+  background: #ffffff;
+  display: block;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px #000;
+  display: flex;
+}
+.container .box-left{
+  margin-top: 10px;  
+}
+.container .box-left h1{
+  font-size: 3.5rem;
+  color: #36384e;
+  margin-bottom: 30px;
+}
+.container .box-left p{
+  font-size: 16px;
+  color: #36384e;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.container .box-left ul{
+  margin-bottom: 40px;
+  
+}
+.container .box-left ul li{
+  color: #36384e;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  list-style-image: url(./assets/images/icon-list.svg);
+}
+.container .box-left form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container .box-left form label{
+  font-size: 14px;
+  color: #36384e;
+  position: relative;
+}
+.container .box-left form.error label::after{
+ 
+}
+.container .box-left form.error label::after{
+  content: 'Valid email requerid';
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  font-weight: 200 !important;
+  color: #ff6257;
+}
+.container .box-left form input[type=email]{
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #36384e;
+  outline: none;
+}
+
+.container .box-left form.error input[type=email]{
+  background: rgba(255, 98, 87, 0.116);
+  border: 1px solid #ff6257;
+}
+
+.container .box-left form.error input[type=email]::placeholder{
+  color: tomato;
+}
+
+.container .box-left form input[type=email]:hover{
+  cursor: pointer;
+}
+.container .box-left form input[type=email]:focus{
+  cursor: text;
+}
+
+.container .box-left form input[type=email].error{
+  outline: 1px solid #ff6257;
+  border: none;
+  background: #ff62571e;
+}
+.container .box-left form input[type=email].error::placeholder{
+  color: #ff6257;
+}
+.container .box-left form button{
+  padding: 15px 0px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #242742;
+  border: none;
+  transition: 0.2s;
+}
+.container .box-left form button:hover{
+  cursor: pointer;
+  background: #ff6257;
+  box-shadow: 1px 1px 10px tomato;
+}
+.container .box-right{
+  margin-left: 30px;
+  background: url('./assets/images/illustration-sign-up-desktop.svg') no-repeat center center;
+  background-size: cover;width: 400px;
+}
+
+@media (max-width: 723px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0px 0px 0px;
+    margin: 0;
+  }
+  .container .box-left{
+    order: 2;
+  }
+  .container .box-right{
+    order: 1;
+    padding: 0;
+    margin: 0;
+    background: url('./assets/images/illustration-sign-up-mobile.svg') no-repeat center center;
+    width: 100%;
+    height: 300px;
+  }
+  .container .box-left{
+    padding: 10px;
+    margin: 0;
+  }
+  .container .box-left{
+    padding: 30px;
+  }
+}
+
+/* pagina segundaria*/
+
+.container-success{
+  margin: 10px;
+ background: #ffffff;
+ padding: 30px;
+ display: flex;
+ flex-direction: column;
+ max-width: 440px;
+ gap: 30px;
+ border-radius: 20px;
+ box-shadow: 0px 0px 8px #242742;
+}
+
+.container-success .top{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container-success img{
+  width: 40px;
+}
+
+.container-success h1{
+  font-size: 3em;
+  line-height: 40px;
+  color: #36384e;
+}
+
+.container-success p{
+  color: #36384e;
+  line-height: 25px;
+  font-size: 16px;
+}
+.container-success p strong {
+  color: #000;
+}
+
+.container-success button{
+  padding: 15px 0;
+  border: none;
+  border-radius: 8px;
+  background: #242742;
+  color: #ffffff;
+  transition: 0.2s;
+}
+.container-success button:hover{
+  cursor: pointer;
+  background: tomato;
+  box-shadow: 1px 1px 10px tomato;
+}
+
+@media (max-width: 400px) {
+  body.success{
+    overflow: hidden;
+    background: #ffffff; 
+  }
+  .container-success button{
+    position: absolute;
+    bottom: 20px;
+    width: 85%;
+  }
+  .container-success{
+    position: relative;
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
